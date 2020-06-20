@@ -1,0 +1,61 @@
+﻿<Window x:Class="AplikacjaPoczta.WybórPoczty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacjaPoczta"    
+        mc:Ignorable="d"
+        Title="WybórPoczty" Height="450" Width="928.422">
+    <Window.Background>
+        <ImageBrush ImageSource="ikony/tło.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,4.4,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="195*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="202*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="260*"/>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="434*"/>
+        </Grid.ColumnDefinitions>
+        <RadioButton x:Name="RBOnetDodaj" Content="Onet" HorizontalAlignment="Left" Margin="186.13,35.4,0,0" VerticalAlignment="Top" Height="40" Width="121" Grid.ColumnSpan="2" FontSize="16" Foreground="White" Grid.Row="2" Grid.Column="1"/>
+        <RadioButton x:Name="RBInteriaDodaj" Content="Interia" HorizontalAlignment="Left" Margin="186.13,91.4,0,0" VerticalAlignment="Top" Height="39" Width="121" Grid.ColumnSpan="2" Foreground="White" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+        <Label HorizontalAlignment="Left" Margin="186.13,10,0,0" VerticalAlignment="Top" Width="99" Height="10" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label x:Name="LabEmail" Content="Email" HorizontalAlignment="Left" Margin="10,35.4,0,0" VerticalAlignment="Top" Width="64" Height="26" Foreground="White" FontWeight="Bold" FontSize="14" Grid.Row="2"/>
+        <Label x:Name="LabHasło" Content="Hasło" HorizontalAlignment="Left" Margin="10,91.4,0,0" VerticalAlignment="Top" Width="64" Height="26" RenderTransformOrigin="0.585,5.37" Foreground="White" FontWeight="Bold" FontSize="14" Grid.Row="2"/>
+        <Button x:Name="BWyloguj" Content="" HorizontalAlignment="Left" Margin="344,133.4,0,0" VerticalAlignment="Top" Width="62" Height="47" RenderTransformOrigin="0.69,0.548" Grid.Column="3" Click="BWyloguj_Click" Grid.Row="2">
+            <Button.Background>
+                <ImageBrush ImageSource="ikony/wyloguj.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BDodaj" Content="" HorizontalAlignment="Left" Margin="30.13,133.4,0,0" VerticalAlignment="Top" Width="67" Height="47" Click="BDodaj_Click" Grid.Row="2" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="ikony/dodaj.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TbEmailDodaj" HorizontalAlignment="Left" Height="26" Margin="79,35.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="BWyślij" Content="" HorizontalAlignment="Left" Margin="136,133.4,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.283,0.774" Height="58" Grid.Column="3" Click="BWyślij_Click" Grid.Row="2">
+            <Button.Background>
+                <ImageBrush ImageSource="ikony/wyślij.png"/>
+            </Button.Background>
+        </Button>
+        <PasswordBox x:Name="PbHasłoDodaj" HorizontalAlignment="Left" Margin="79,91.4,0,0" VerticalAlignment="Top" Width="204" Height="26" RenderTransformOrigin="-1.422,1.709" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label x:Name="LabWybór" Content="Wybierz pocztę :" HorizontalAlignment="Left" Margin="186.13,14,0,0" VerticalAlignment="Top" Width="121" Height="27" Grid.ColumnSpan="2" Foreground="White" FontWeight="Bold" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="LabDoKogo" Content="Email odbiorcy" Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="26,14,0,0" VerticalAlignment="Top" Width="315" Cursor="" Background="{x:Null}" Foreground="White" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="LabWiadomość" Content="Treść wiadomości" Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="26,161,0,0" VerticalAlignment="Top" Width="315" Cursor="" Foreground="White" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="TbEmailOdbiorcy" HorizontalAlignment="Left" Height="26" Margin="26,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Grid.Column="3"/>
+        <TextBox x:Name="TbTemat" HorizontalAlignment="Left" Height="26" Margin="26,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Grid.Column="3"/>
+        <Label x:Name="LabTemat" Content="Temat wiadomości" Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="26,79,0,0" VerticalAlignment="Top" Width="315" Cursor="" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="TbWiadomość" Grid.Column="3" HorizontalAlignment="Left" Height="142" Margin="26,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Grid.RowSpan="3"/>
+        <RadioButton x:Name="RBOnet" Content="Onet" HorizontalAlignment="Left" Margin="186.13,54,0,0" VerticalAlignment="Top" Height="40" Width="121" Grid.ColumnSpan="2" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <RadioButton x:Name="RBInteria" Content="Interia" HorizontalAlignment="Left" Margin="186.13,110,0,0" VerticalAlignment="Top" Height="39" Width="121" Grid.ColumnSpan="2" Foreground="White" FontSize="16" Grid.Column="1"/>
+        <Label x:Name="LabEmail_Copy" Content="Email" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="64" Height="26" Background="{x:Null}" BorderBrush="White" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="LabHasło_Copy" Content="Hasło" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="64" Height="26" RenderTransformOrigin="0.585,5.37" Foreground="White" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="TbEmail" HorizontalAlignment="Left" Height="26" Margin="79,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="PbHasło" HorizontalAlignment="Left" Margin="79,110,0,0" VerticalAlignment="Top" Width="204" Height="26" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
